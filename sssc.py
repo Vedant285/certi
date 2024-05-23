@@ -1,5 +1,5 @@
 #read line by line from a csv file
-with open('./Data/Participant List.csv', 'r') as f:
+with open('/workspaces/certi/Data/Participant List.csv', 'r') as f:
     list_participate = f.readlines()
     list_participate = [x.strip().split(',') for x in list_participate]
     print(list_participate)
@@ -343,7 +343,7 @@ def send_email(name,email):
 
   # To attach a file to the email (optional):
   # Relative path is not working for some reason so I have used the absolute path to the ./Output/PDF/ folder
-  attachment  = r"C:\Users\Sunit Dwivedi\Documents\InstantCDDVD\gssoc\MLSA-Certificate-Generator_Email-Sender\Output\PDF\\" + name + '.pdf' 
+  attachment  = r"\workspaces\certi\Output\\" + name + '.pdf' 
   mail.Attachments.Add(attachment)
 
   mail.Send()
